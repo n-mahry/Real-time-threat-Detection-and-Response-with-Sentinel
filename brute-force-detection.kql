@@ -1,0 +1,6 @@
+SecurityEvent
+| where EventID == 4625
+| project TimeGenerated, EventID, WorkstationName, Computer,
+         Account, LogonTypeName, IpAddress
+| extend AccountEntity = Account
+| extend IpEntity = IpAddress
